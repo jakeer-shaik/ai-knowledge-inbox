@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Backend runtime
+backend/.env
+backend/data/
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/test-results/
+frontend/playwright-report/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Not part of the submission
+TODO.md
+*.pdf

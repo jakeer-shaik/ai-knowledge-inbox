@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* Design tokens: emerald on charcoal. Every colour and font in the UI comes from here. */
+@theme {
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", "Figtree", ui-sans-serif, sans-serif;
+
+  /* Main stage (light) */
+  --color-paper: #f4f5f7;
+  --color-surface: #ffffff;
+  --color-ink: #14161c;
+  --color-muted: #5c6170;
+  --color-rule: #e3e5ea;
+
+  /* Sidebar (charcoal) */
+  --color-night: #17191f;
+  --color-night-raised: #22252d;
+  --color-night-rule: #30343e;
+  --color-night-ink: #f4f5f7;
+  --color-night-muted: #a1a6b3;
+
+  /* Accents */
+  --color-accent: #059669;        /* emerald: actions, citations, focus */
+  --color-accent-strong: #047857;
+  --color-accent-soft: #d1fae5;
+  --color-accent-light: #6ee7b7;  /* emerald on charcoal */
+  --color-marker: #a7f3d0;        /* mint highlight on cited passages */
+  --color-mint: #34d399;          /* notes, connected */
+  --color-teal: #2dd4bf;          /* links */
+  --color-coral: #fb7185;         /* failures on charcoal */
+  --color-bad: #e11d48;           /* failures on light */
+  --color-bad-soft: #ffe4e6;
+}
+
+@layer base {
+  body {
+    @apply bg-paper font-sans text-base text-ink antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  mark {
+    color: inherit;
+  }
+}

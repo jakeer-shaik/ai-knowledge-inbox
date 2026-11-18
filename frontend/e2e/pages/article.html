@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Connection Pooling Guide</title>
+  </head>
+  <body>
+    <nav>Home | Blog | About</nav>
+    <article>
+      <h1>Connection Pooling Guide</h1>
+      <p>
+        PgBouncer sits between the application and Postgres and keeps a small pool of server connections open. In
+        transaction pooling mode a server connection is assigned to a client only for the duration of a transaction.
+      </p>
+      <p>
+        Size the application pool per instance so that instances multiplied by pool size stays below max_connections.
+        Prepared statements do not survive transaction pooling, so disable them in the database driver.
+      </p>
+      <p>Monitor the waiting clients metric: if it grows, the pool is too small or transactions are too long.</p>
+    </article>
+    <footer>Copyright Example Corp</footer>
+  </body>
+</html>
